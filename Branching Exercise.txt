@@ -1,0 +1,57 @@
+Part 1
+
+1. git branch (name)
+
+2. Fast-Forward Merge - happens when a new branch is being directly added to current branch (linear path) / Recursive Merge - happens when branches have diverged and new commits have been added to both branches
+
+3. git checkout (name)
+
+4. git branch -d
+
+5. When Git cant decide what file to merge due to different commits being added to the same file
+
+
+Part 2
+
+git branch main-1
+
+git checkout main-1
+
+git branch new-branch-1
+
+git checkout new-branch-1
+
+echo "changes" >> newfile1.txt
+
+git add newfile1.txt
+
+git commit -m "added newfile1.txt"
+
+git checkout main-1
+
+git merge new-branch-1
+
+
+git checkout -b new-branch-2
+
+echo "changes new-branch-2" >> newfile1.txt
+
+git add newfile1.txt
+
+git commit -m "changed newfile1.txt on new-branch-2"
+
+git chechout main-1
+
+echo "changes main-1" >> newfile1.txt
+
+git add newfile1.txt
+
+git commit -m "correct newfile1 for main-1"
+
+git merge new-branch-2
+
+git add newfile1.txt
+
+git commit -m "solved merge with main-1 and new-branch-2"
+
+
